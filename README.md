@@ -68,3 +68,4 @@ Esta práctica implementa y compara el uso de las principales clases de la inter
 
 ## Captura
 
+![Captura de pantalla 2025-07-01 195525](https://github.com/user-attachments/assets/ae4980bb-9636-41bb-b77b-ca944ef87ec7)
