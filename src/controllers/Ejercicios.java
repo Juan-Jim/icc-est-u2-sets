@@ -48,27 +48,56 @@ public  class Ejercicios {
         }
         return palabrasUnicas.size();       
     }
+        
+   
 
-    public void compareTextos(String texto1, String texto2) {
+    
+
+    public boolean isIsogram(String palabra) {
+        Set<Character> palabras = new HashSet<>();
+        for (char c : palabra.toCharArray()) {
+            if (!palabras.add(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int contarPalabrasUnicas(String frase) {
+        Set<String> palabras = new HashSet<>();
+        String[] palabrasArray = frase.split(" ");
+        for (String palabra : palabrasArray) {
+            palabras.add(palabra);
+        }
+
+        return palabras.size();
+    }
+
+    public void compararTextos(String texto1, String texto2) {
         Set<String> palabrasTexto1 = new HashSet<>();
         Set<String> palabrasTexto2 = new HashSet<>();
-        
+
         for (String palabra : texto1.split(" ")) {
-            if (!palabra.isEmpty()) {
-                palabrasTexto1.add(palabra);
-            }
+            palabrasTexto1.add(palabra);
+
         }
-        
+
         for (String palabra : texto2.split(" ")) {
-            if (!palabra.isEmpty()) {
-                palabrasTexto2.add(palabra);
-            }
+            palabrasTexto2.add(palabra);
         }
-        
+
         Set<String> interseccion = new HashSet<>(palabrasTexto1);
         interseccion.retainAll(palabrasTexto2);
+
+        System.out.println("Texto 1: " + contarPalabrasUnicas(texto1) + " palabras únicas");
+        System.out.println("Texto 2: " + contarPalabrasUnicas(texto2) + " palabras únicas");
         
-        System.out.println("Palabras comunes: " + interseccion);
+        System.out.println("Palabras comunes: " + interseccion.size());
+
+        System.out.println("Concidencia léxica: " + (interseccion.size() * 100 / Math.min(palabrasTexto1.size(), palabrasTexto2.size())) + "%");
+        System.out.println("Palabras comunes 1: "+ interseccion);
+        System.out.println("Palabras comunes 2: " + interseccion);
+
     }
-        
+    
 }

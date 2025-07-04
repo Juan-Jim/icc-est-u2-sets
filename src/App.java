@@ -2,6 +2,7 @@
 import controllers.ContactoControler;
 import controllers.Ejercicios;
 
+import java.util.HashSet;
 import java.util.Set;
 import models.Contacto;
 public class App {
@@ -49,7 +50,9 @@ public class App {
         System.out.println("Ejercicio 4");
         String texto1 = "¡Hola! La programación en Java es muy divertida, sobre todo cuando se entienden los conceptos.";
         String texto2 = "Java es divertido. Aprender programación puede ser un reto, pero también muy gratificante.";
-        ejercicios.compareTextos(texto1, texto2);
+        ejercicios.compararTextos(texto1, texto2);
+
+        
     }
 
     public static void imprimirAgendaPorNombre(ContactoControler controler) {
